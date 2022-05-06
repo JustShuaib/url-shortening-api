@@ -139,7 +139,7 @@ main {
   margin: 0 auto;
   padding: 1rem;
   background-color: var(--pry-dark-violet);
-  border-radius: 10px;
+  border-radius: 5px;
   position: absolute;
   top: -5rem;
   left: 50%;
@@ -207,4 +207,11 @@ main {
   .form__btn {
     width: 15rem;
   }
+}
+.link__container {
+  background-color: white;
+  border-radius: 10px;
+  width: 85%;
+  margin: 0 auto;
+  padding: 1rem;
 }
