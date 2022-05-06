@@ -1,8 +1,127 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap");
+:root {
+  --pry-cyan: hsl(180, 66%, 49%);
+  --pry-dark-violet: hsl(257, 27%, 26%);
+  --sec-red: hsl(0, 87%, 67%);
+  --gray: hsl(0, 0%, 75%);
+  --grayish-violet: hsl(257, 7%, 63%);
+  --very-dark-blue: hsl(255, 11%, 22%);
+  --very-dark-violet: hsl(260, 8%, 14%);
+}
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
 body {
-  background-color: lavenderblush;
+  font-size: 1.125rem;
+  font-family: "Poppins", sans-serif;
+}
+/* Nav bar */
+.nav {
+  display: flex;
+  place-items: center;
+  padding: 1rem 2rem;
+}
+.nav-list {
+  display: none;
+}
+
+.hamburger {
+  margin-left: auto;
+  width: 2rem;
+}
+.sign-up-btn {
+  padding: 0.4rem 0.8rem;
+  background-color: var(--pry-cyan);
+  color: white;
+  border-radius: 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+@media screen and (min-width: 700px) {
+  .nav {
+    padding: 2rem 5rem;
+  }
+  .logo {
+    margin-right: 3rem;
+  }
+  .nav-list {
+    display: flex;
+  }
+  .login {
+    margin-left: auto;
+  }
+  .nav-list li {
+    list-style-type: none;
+    margin: 0 0.5rem;
+  }
+  .nav__link {
+    text-decoration: none;
+    color: var(--grayish-violet);
+  }
+  .nav__link:hover {
+    color: var(--very-dark-violet);
+  }
+  .hamburger {
+    display: none;
+  }
+}
+/* End of nav bar */
+
+/* Header */
+.header {
+  display: grid;
+  overflow: hidden;
+}
+.header__img {
+  width: 100%;
+  margin-left: 4rem;
+}
+.header__copy {
+  padding: 1rem;
+  text-align: center;
+}
+.header__copy--header {
+  line-height: 2.8rem;
+  color: var(--very-dark-violet);
+}
+.header__copy--text {
+  color: var(--grayish-violet);
+}
+@media screen and (min-width: 700px) {
+  .header {
+    grid-template-columns: repeat(2, 1fr);
+    flex-direction: row-reverse;
+  }
+  .header__img {
+    order: 1;
+  }
+  .header__copy {
+    text-align: left;
+    padding: 1rem 5rem;
+    margin-top: 3rem;
+  }
+  .header__copy--header {
+    font-size: 3rem;
+    line-height: 3.5rem;
+  }
+  .header__copy--text {
+    font-size: 1.2rem;
+  }
+}
+.btn {
+  background-color: var(--pry-cyan);
+  color: white;
+  border-radius: 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+  border: none;
+  padding: 0.7rem 3rem;
+  margin: 1rem 0;
+  text-transform: capitalize;
 }
