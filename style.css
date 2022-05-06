@@ -239,3 +239,28 @@ main {
     margin-right: 0.7rem;
   }
 }
+.section {
+  width: 90%;
+  margin: 2rem auto;
+  text-align: center;
+}
+.section__header {
+  color: var(--very-dark-violet);
+}
+.section__title {
+  color: var(--grayish-violet);
+  color: var(--pry-dark-violet);
+}
+.section__container {
+  display: grid;
+}
+.card {
+  background-color: white;
+  border-radius: 5px;
+  padding: 1rem;
+}
+@media screen and (min-width: 700px) {
+  .section {
+    text-align: left;
+  }
+}
