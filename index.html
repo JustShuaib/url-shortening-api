@@ -48,44 +48,20 @@
     </header>
     <!-- End of Hero -->
     <main>
-      <form class="align form">
+      <form class="align form" id="form">
         <label class="form__label" for="link">
           <input
-            class="form__input form__input--error"
+            class="form__input"
             placeholder="Shorten a link here..."
             type="url"
-            id="link"
+            id="link-input"
           />
         </label>
-        <p class="form__input--copy">Please add a link</p>
+        <p class="form__input--copy" id="error-message"></p>
         <button type="submit" class="btn btn__sec form__btn">
           shorten it!
         </button>
       </form>
-      <!-- Shortened links -->
-      <div class="align link__container">
-        <p class="container__title">https://www.frontendmentor.io</p>
-        <code class="code">https://rel.ink/k4lKyk</code>
-        <button class="btn btn__sec">copy</button>
-      </div>
-      <!-- End of single shortened link -->
-
-      <!-- Shortened links -->
-      <div class="align link__container">
-        <p class="container__title">https://www.twitter.com/frontend...</p>
-        <code class="code">https://rel.ink/k4lKyk</code>
-        <button class="btn btn__sec">copy</button>
-      </div>
-      <!-- End of single shortened link -->
-
-      <!-- Shortened links -->
-      <div class="align link__container">
-        <p class="container__title">https://www.linkedin.com/compan...</p>
-        <code class="code">https://rel.ink/k4lKyk</code>
-        <button class="btn btn__sec">copy</button>
-      </div>
-      <!-- End of single shortened link -->
-
       <section class="section">
         <h2>Advanced statistics</h2>
         <p class="section__title">

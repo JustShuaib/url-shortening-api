@@ -214,13 +214,14 @@ main {
 }
 .form__input {
   width: 100%;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   padding: 0.3rem 0.5rem;
   font: inherit;
   border-radius: 5px;
   border: none;
 }
 .form__input--error {
+  margin-bottom: 2rem;
   border: 2px solid var(--sec-red);
 }
 .form__input--error:focus {
@@ -277,6 +278,9 @@ main {
   color: var(--pry-cyan);
   font: inherit;
   padding: 0.7rem 0;
+}
+.item-copied {
+  background-color: var(--very-dark-blue);
 }
 @media screen and (min-width: 796px) {
   .container__title {

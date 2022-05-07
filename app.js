@@ -18,7 +18,6 @@ function handleSubmitForm(e) {
     linkInput.classList.remove("form__input--error");
     addNewLinkElement(linkToShorten);
   }
-  console.log(linkToShorten);
   linkInput.value = "";
   e.preventDefault();
 }
@@ -31,8 +30,8 @@ function addNewLinkElement(linkToShorten) {
   <code class="code" data-id="shortened-link">https://rel.ink/k4lKyk</code>
   <button class="btn btn__sec" data-id="copy-btn">copy</button>
   `;
-  container.addEventListener("click", copyToClipBoard);
   form.insertAdjacentElement("afterend", container);
+  container.addEventListener("click", copyToClipBoard);
 }
 
 function copyToClipBoard(e) {
@@ -45,8 +44,12 @@ function copyToClipBoard(e) {
       e.target.classList.remove("item-copied");
     }, 2000);
   }
-  console.log(e.currentTarget);
-  if (e.currentTarget.dataset.id === "shortened-link") {
-    console.log(e.currentTarget.textContent);
-  }
+  const containerChildren = e.currentTarget.children;
+  Array.from(containerChildren).forEach((child) => {
+    if (child.dataset.id === "shortened-link") {
+      console.log(child.textContent);
+      const shortenedLink = child.textContent;
+      navigator.clipboard.writeText(shortenedLink);
+    }
+  });
 }
