@@ -245,21 +245,62 @@ main {
     margin-right: 0.7rem;
   }
 }
+
 .section {
   width: 90%;
-  margin: 2rem auto;
+  /* margin: 2rem auto; */
+  margin-inline: auto;
+  margin-top: 5rem;
   text-align: center;
 }
 .section__title {
   color: var(--grayish-violet);
+  max-width: 30rem;
+  margin: 1rem auto;
 }
 .section__container {
   display: grid;
+  row-gap: 6rem;
+  margin-top: 4rem;
 }
 .card {
   background-color: white;
   border-radius: 5px;
   padding: 1rem;
+  padding-top: 4rem;
+  position: relative;
+}
+.card__img {
+  position: absolute;
+  top: -2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--pry-dark-violet);
+  padding: 0.8rem 1rem;
+  border-radius: 50%;
+  width: fit-content;
+}
+.card__img--sec {
+  padding: 0.9rem 1rem 0.6rem 1rem;
+}
+.card__img--last {
+  padding: 0.8rem 0.9rem 0.5rem 0.9rem;
 }
 @media screen and (min-width: 700px) {
+  .section__container {
+    align-items: flex-start;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 1.5rem;
+    height: 23rem;
+  }
+  .sec__card {
+    align-self: center;
+  }
+  .last__card {
+    align-self: flex-end;
+  }
+  .card__img {
+    left: 2rem;
+    transform: translateX(0);
+  }
 }
