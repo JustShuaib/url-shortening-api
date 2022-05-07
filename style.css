@@ -121,6 +121,7 @@ h3 {
 
 main {
   background-color: var(--light-gray);
+  background-color: yellow;
   position: relative;
   padding-top: 5rem;
 }
@@ -251,6 +252,7 @@ main {
   margin-inline: auto;
   margin-top: 5rem;
   text-align: center;
+  background-color: green;
 }
 .section__title {
   color: var(--grayish-violet);
@@ -258,6 +260,7 @@ main {
   margin: 1rem auto;
 }
 .section__container {
+  background-color: blue;
   display: grid;
   row-gap: 6rem;
   margin-block: 4rem;
@@ -353,6 +356,7 @@ main {
   background-image: url(./images/bg-boost-mobile.svg);
   background-repeat: no-repeat;
   background-position: center;
+  top: 0;
 }
 @media screen and (min-width: 796px) {
   .pre-footer {
@@ -360,6 +364,11 @@ main {
     background-image: url(./images/bg-boost-desktop.svg);
   }
 }
+.pre-form--text {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+/* Footer */
 .footer {
   background-color: var(--very-dark-blue);
   background-color: var(--very-dark-violet);
