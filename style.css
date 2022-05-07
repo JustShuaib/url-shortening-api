@@ -29,19 +29,46 @@ h3 {
   place-items: center;
   padding: 1.5rem 2rem;
 }
-.nav-list {
+.nav-list__group {
+  position: absolute;
+  top: 5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: var(--pry-dark-violet);
+  border-radius: 10px;
+  text-align: center;
+  padding-inline: 1rem;
+}
+.hide--nav-list {
   display: none;
+}
+.nav-list li {
+  list-style-type: none;
+  margin-block: 1.5rem;
+}
+.nav__link {
+  text-decoration: none;
+  color: white;
+}
+.nav__link--underline {
+  display: block;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--grayish-violet);
 }
 .hamburger {
   margin-left: auto;
   width: 2rem;
 }
 .btn__sign-up {
-  padding: 0.4rem 0.8rem;
+  padding: 0.4rem 1.5rem;
   border-radius: 20px;
   font-size: 1rem;
-  cursor: pointer;
   text-decoration: none;
+  display: block;
 }
 @media screen and (min-width: 768px) {
   .nav {
@@ -51,19 +78,35 @@ h3 {
   .logo {
     margin-right: 3rem;
   }
+  .nav-list__group {
+    position: relative;
+    top: 0;
+    left: 0;
+    transform: translate(0);
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    border-radius: 0;
+    padding: 0;
+    background-color: inherit;
+  }
   .nav-list {
     display: flex;
+    align-items: center;
   }
-  .login {
-    margin-left: auto;
+  .hide--nav-list {
+    display: flex;
   }
   .nav-list li {
-    list-style-type: none;
     margin: 0 0.5rem;
   }
   .nav__link {
-    text-decoration: none;
     color: var(--grayish-violet);
+  }
+  .nav__link--underline {
+    display: block;
+    padding-bottom: 0;
+    border-bottom: 0;
   }
   .nav__link:hover {
     color: var(--very-dark-violet);
