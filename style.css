@@ -54,9 +54,8 @@ h3 {
   text-decoration: none;
   color: white;
 }
-.nav__link--underline {
+.nav--underline {
   display: block;
-  padding-bottom: 1.5rem;
   border-bottom: 1px solid var(--grayish-violet);
 }
 .hamburger {
@@ -104,7 +103,7 @@ h3 {
   .nav__link {
     color: var(--grayish-violet);
   }
-  .nav__link--underline {
+  .nav--underline {
     display: block;
     padding-bottom: 0;
     border-bottom: 0;
