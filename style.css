@@ -149,7 +149,7 @@ h3 {
   }
   .header__copy {
     text-align: left;
-    padding: 1rem 5rem;
+    padding: 1rem;
     margin-top: 3rem;
   }
   .header__copy--header {
@@ -158,6 +158,11 @@ h3 {
   }
   .header__copy--text {
     font-size: 1.2rem;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .header__copy {
+    padding: 1rem 5rem;
   }
 }
 /* End of hero */
