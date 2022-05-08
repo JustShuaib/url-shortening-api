@@ -149,7 +149,8 @@ h3 {
   }
   .header__copy {
     text-align: left;
-    padding: 1rem 2rem;
+    padding: 1rem;
+    padding-left: 5rem;
     margin-top: 3rem;
   }
   .header__copy--header {
