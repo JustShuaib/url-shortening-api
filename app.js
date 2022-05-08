@@ -3,8 +3,22 @@ const navList = document.getElementById("nav-list-group");
 const form = document.getElementById("form");
 const linkInput = document.getElementById("link-input");
 const errorMessage = document.getElementById("error-message");
-hamburger.addEventListener("click", () => {
-  navList.classList.toggle("hide--nav-list");
+
+document.addEventListener("click", (e) => {
+  if (e.target === hamburger) navList.classList.toggle("hide--nav-list");
+  else if (
+    e.target.classList.contains("nav__link") ||
+    e.target.classList.contains("nav-list") ||
+    e.target.classList.contains("btn__sign-up") ||
+    e.target.parentNode.classList.contains("nav") ||
+    e.target.parentNode.classList.contains("nav-list")
+  ) {
+    return;
+  } else {
+    navList.classList.contains("hide--nav-list")
+      ? navList.classList.add("hide--nav-list")
+      : navList.classList.add("hide--nav-list");
+  }
 });
 form.addEventListener("submit", handleSubmitForm);
 
