@@ -26,11 +26,13 @@ function handleDisplayNavBar(e) {
     navList.classList.add("hide--nav-list");
 }
 /**
- * If the input is empty, add an error class to the input and display an error message. If the input isnot empty, remove the error class and display the link.
+ * If the input is empty or doesn't match the regular expression, add an error class to the input and
+ * display an error message. Otherwise, remove the error class and display the link.
  */
 function handleSubmitForm(e) {
   const linkToShorten = linkInput.value;
-  if (linkToShorten.trim() === "") {
+  const re = /.[\D]$/i; //must end with dot followed by a letter
+  if (!linkToShorten.trim() || !re.test(linkToShorten)) {
     linkInput.classList.add("form__input--error");
     errorMessage.textContent = "Please add a link";
   } else {
