@@ -30,10 +30,31 @@ function addNewLinkElement(linkToShorten) {
   <code class="code" data-id="shortened-link">https://rel.ink/k4lKyk</code>
   <button class="btn btn__sec" data-id="copy-btn">copy</button>
   `;
+  const func = shortenLink(linkToShorten);
+  // console.log(func);
+  const [longLink, shortLink] = func;
+
+  console.log(longLink, shortLink);
   form.insertAdjacentElement("afterend", container);
   container.addEventListener("click", copyToClipBoard);
 }
+function shortenLink(link) {
+  const fetchUrl = `https://api.shrtco.de/v2/shorten?url=${link}`;
+  const shortLink = async () => {
+    try {
+      const data = await fetch(fetchUrl);
+      const res = await data.json();
+      if (!res.ok) throw new TypeError("Error");
+      const { original_link: originalLink, full_short_link: shortenedLink } =
+        res.result;
+      return [originalLink, shortenedLink];
+    } catch (error) {
+      console.log(error.name);
+    }
+  };
 
+  shortLink();
+}
 function copyToClipBoard(e) {
   if (e.target.dataset.id === "copy-btn") {
     e.target.textContent = "copied!";
@@ -47,7 +68,6 @@ function copyToClipBoard(e) {
   const containerChildren = e.currentTarget.children;
   Array.from(containerChildren).forEach((child) => {
     if (child.dataset.id === "shortened-link") {
-      console.log(child.textContent);
       const shortenedLink = child.textContent;
       navigator.clipboard.writeText(shortenedLink);
     }
