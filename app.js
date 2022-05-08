@@ -6,19 +6,18 @@ const errorMessage = document.getElementById("error-message");
 
 document.addEventListener("click", (e) => {
   if (e.target === hamburger) navList.classList.toggle("hide--nav-list");
-  else if (
-    e.target.classList.contains("nav__link") ||
-    e.target.classList.contains("nav-list") ||
-    e.target.classList.contains("btn__sign-up") ||
-    e.target.parentNode.classList.contains("nav") ||
-    e.target.parentNode.classList.contains("nav-list")
-  ) {
-    return;
-  } else {
-    navList.classList.contains("hide--nav-list")
-      ? navList.classList.add("hide--nav-list")
-      : navList.classList.add("hide--nav-list");
-  }
+  /* Checking if the clicked element is not among the elements inside the nav bar.
+If it's not, then it adds hide--nav-list class */
+  if (
+    !(
+      e.target.classList.contains("nav__link") ||
+      e.target.classList.contains("nav-list") ||
+      e.target.classList.contains("btn__sign-up") ||
+      e.target.parentNode.classList.contains("nav") ||
+      e.target.parentNode.classList.contains("nav-list")
+    )
+  )
+    navList.classList.add("hide--nav-list");
 });
 form.addEventListener("submit", handleSubmitForm);
 
