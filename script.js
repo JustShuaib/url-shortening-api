@@ -1,5 +1,6 @@
 const hamburger = document.querySelector(".hamburger"),
   navList = document.getElementById("nav-list-group"),
+  navLinks = document.querySelectorAll(".nav__link"),
   form = document.getElementById("form"),
   linkInput = document.getElementById("link-input"),
   errorMessage = document.getElementById("error-message");
@@ -7,14 +8,16 @@ const hamburger = document.querySelector(".hamburger"),
 window.addEventListener("click", handleDisplayNavBar);
 window.addEventListener("DOMContentLoaded", getFromStorage);
 form.addEventListener("submit", handleSubmitForm);
-
+console.log(navLinks);
 /**
  * If the clicked element is not among the elements inside the nav bar, then it adds hide--nav-list class.
  */
 function handleDisplayNavBar(e) {
   const el = e.target;
-  if (el === hamburger) navList.classList.toggle("hide--nav-list");
-  if (
+  if (el.parentElement === hamburger) {
+    navList.classList.toggle("hide--nav-list");
+    navLinks.forEach((link) => link.classList.toggle("animate-nav__link"));
+  } else if (
     !(
       el.classList.contains("nav__link") ||
       el.classList.contains("nav-list") ||
@@ -140,6 +143,10 @@ function getFromStorage() {
   }
 }
 
+/**
+ * If the distance from the top of the page to the top of the element is less than the window height
+ * minus 50, add the class 'show' to the element, otherwise remove the class 'show'.
+ */
 const animateText = document.querySelectorAll(".scroll-animation");
 function showText() {
   animateText.forEach((text) => {
