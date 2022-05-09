@@ -36,7 +36,7 @@ function handleSubmitForm(e) {
   const re = /.[\D]$/i; //must end with dot followed by a letter
   if (!linkToShorten.trim() || !re.test(linkToShorten)) {
     linkInput.classList.add("form__input--error");
-    errorMessage.textContent = "Please add a link";
+    errorMessage.textContent = "Please add a valid link";
   } else {
     errorMessage.textContent = "";
     linkInput.classList.remove("form__input--error");
