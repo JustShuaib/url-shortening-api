@@ -139,3 +139,15 @@ function getFromStorage() {
     }
   }
 }
+
+const animateText = document.querySelectorAll(".scroll-animation");
+function showText() {
+  animateText.forEach((text) => {
+    const winHeight = window.innerHeight;
+    const distFromTop = text.getBoundingClientRect().top;
+    if (distFromTop < winHeight - 50) text.classList.add("show");
+    else text.classList.remove("show");
+  });
+}
+
+window.addEventListener("scroll", showText);

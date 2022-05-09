@@ -195,6 +195,15 @@ main {
   flex-direction: column;
   border-radius: 5px;
 }
+.scroll-animation {
+  opacity: 0;
+  transform: translateY(2rem);
+  transition: all 0.5s ease-in;
+}
+.show {
+  opacity: 1;
+  transform: translateX(0);
+}
 @media screen and (min-width: 796px) {
   .align {
     flex-direction: row;
