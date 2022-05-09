@@ -8,7 +8,6 @@ const hamburger = document.querySelector(".hamburger"),
 window.addEventListener("click", handleDisplayNavBar);
 window.addEventListener("DOMContentLoaded", getFromStorage);
 form.addEventListener("submit", handleSubmitForm);
-console.log(navLinks);
 /**
  * If the clicked element is not among the elements inside the nav bar, then it adds hide--nav-list class.
  */
